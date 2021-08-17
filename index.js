@@ -28,11 +28,17 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+  Counter 1, count is only within the function counterMaker
+  Counter 2, count is located outside of the function
   
   2. Which of the two uses a closure? How can you tell?
+  They both use closure.
+
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     counter 1 would be better when you just strictly need it in that function.
+     and counter 2 would be better when you would need to access it outside of that function down the line.
 */
 
 // counter1 code
@@ -62,8 +68,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning() {
+  return Math.floor(Math.random() * 3);
 }
 
 
@@ -81,10 +87,18 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inningcb, num){
+  let homescore = 0;
+  let awayscore = 0;
+    for(let i=0; i< num; i++){
+      homescore = homescore + inningcb();  
+      awayscore = awayscore + inningcb(); 
+    }
+  return {
+    Home:homescore,
+    Away:awayscore,
+  }
 }
-
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
