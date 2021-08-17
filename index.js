@@ -32,13 +32,13 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Counter 2, count is located outside of the function
   
   2. Which of the two uses a closure? How can you tell?
-  They both use closure.
+  They both are using a closure.
 
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
      counter 1 would be better when you just strictly need it in that function.
-     and counter 2 would be better when you would need to access it outside of that function down the line.
+     counter 2 would be better when you would need to access it outside of that function down the line.
 */
 
 // counter1 code
